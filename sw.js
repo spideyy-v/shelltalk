@@ -1,6 +1,5 @@
-self.addEventListener('notificationclick', function(event) {
+// sw.js - Service Worker
+self.addEventListener('notificationclick', function (event) {
   event.notification.close();
-  event.waitUntil(
-    clients.openWindow(event.notification.data.url)
-  );
+  event.waitUntil(clients.openWindow(event.notification.data.url));
 });
