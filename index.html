@@ -9,6 +9,17 @@
 </head>
 <body>
 
+  <div id="notifyPopup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); color: #00ff00; font-family: Courier New, monospace;
+  display: flex; align-items: center; justify-content: center; z-index: 9999; flex-direction: column; text-align: center;">
+  <div style="max-width: 400px; padding: 20px; border: 2px solid #00ff00; border-radius: 10px; background-color: #111;">
+    <h2>🔔 Notification Permission</h2>
+    <p>This app would like to send you notifications when new messages arrive. Allow?</p>
+    <button id="allowNotifyBtn" style="margin-top: 10px;">✅ Allow</button>
+    <button id="denyNotifyBtn" style="margin-top: 5px;">❌ Deny</button>
+  </div>
+  </div>
+
 <div class="login-container" id="loginSection">
   <h2><img src="icon.png" width="100px" alt="ShellTalk"><br>ShellTalk Login</h2>
   <input id="codename" type="text" placeholder="Enter Codename" />
