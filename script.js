@@ -295,3 +295,24 @@ function notifyUser(title, message) {
     });
   }
 }
+// Show notification popup when page loads
+window.addEventListener('load', () => {
+  if ('Notification' in window && Notification.permission !== 'granted') {
+    document.getElementById('notifyPopup').style.display = 'flex';
+  }
+});
+
+document.getElementById('allowNotifyBtn').addEventListener('click', () => {
+  Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+      alert("✅ Notifications enabled!");
+    } else {
+      alert("❌ Notifications denied.");
+    }
+    document.getElementById('notifyPopup').style.display = 'none';
+  });
+});
+
+document.getElementById('denyNotifyBtn').addEventListener('click', () => {
+  document.getElementById('notifyPopup').style.display = 'none';
+});
