@@ -1,0 +1,151 @@
+/* Mobile-optimized styles for ShellTalk */
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 10px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.login-container, .chat-container {
+    border: 2px solid #00ff00;
+    padding: 15px;
+    background: #111;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px; /* Prevents zoom on iOS */
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle {
+    font-size: 1.5rem;
+    border-style: none;
+    padding: 5px;
+    width: auto;
+    display: inline-block;
+}
+
+.chat-display {
+    height: 50vh;
+    overflow-y: auto;
+    background: #000;
+    padding: 10px;
+    border: 1px solid #0f0;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.chat-line {
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.hidden {
+    display: none;
+}
+
+ion-icon {
+    margin-bottom: -2px;
+}
+
+/* Mobile-specific adjustments */
+#loginSection h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#loginSection img {
+    width: 80px;
+}
+
+#roomCodeDisplay, #roomPasswordDisplay {
+    word-break: break-all;
+}
+
+/* Notification popup adjustments for mobile */
+#notifyPopup div {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+}
+
+/* Button container for chat actions */
+.chat-container > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.chat-container > div:first-child button {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    padding: 8px 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+/* Send button adjustments */
+.send {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Improve touch targets */
+button, input[type="button"] {
+    min-height: 44px; /* Apple's recommended minimum touch target size */
+}
+
+/* Prevent textarea from being too small */
+#messageInput {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Mobile landscape orientation support */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .chat-display {
+        height: 40vh;
+    }
+    
+    .login-container, .chat-container {
+        padding: 10px;
+    }
+}
+
+/* Larger phones */
+@media screen and (min-width: 400px) {
+    body {
+        padding: 15px;
+    }
+}
+
+/* Small tablets */
+@media screen and (min-width: 768px) {
+    .login-container, .chat-container {
+        width: 80%;
+        max-width: 600px;
+    }
+}
