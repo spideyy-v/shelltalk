@@ -32,12 +32,16 @@
 </div>
 
 <div class="chat-container hidden" id="chatSection">
-<div><button class="toggle" onclick="toggleMode()" id="modeBtn">°…°</button> <b>Room:</b> <span id="roomCodeDisplay"></span> | <b>Pass:</b> <span id="roomPasswordDisplay"></span> &nbsp; &nbsp;<button onclick="logout()"><ion-icon name="log-out"></ion-icon></button> 
-    <button onclick="createRoom()"><ion-icon name="duplicate"></ion-icon></button>
-    <button onclick="joinRoom()"><ion-icon name="copy"></ion-icon></button>
+<div><button class="toggle" onclick="toggleMode()" id="modeBtn">°…°</button> <b>Room:</b> <span id="roomCodeDisplay"></span> | <b>Pass:</b> <span id="roomPasswordDisplay"></span> &nbsp; &nbsp;
+    <button class="desktop" onclick="logout()"><ion-icon name="log-out"></ion-icon>LOGOUT</button> 
+    <button class="desktop" onclick="createRoom()"><ion-icon name="duplicate"></ion-icon>CREATE ROOM</button>
+    <button class="desktop" onclick="joinRoom()"><ion-icon name="copy"></ion-icon>JOIN ROOM</button>
   </div>
   <div class="chat-display" id="chatDisplay"></div>
   <textarea id="messageInput" placeholder="Type your message..."></textarea><button class="send" onclick="sendMessage()">Send <ion-icon name="send"></ion-icon></button>
+    <button class="send" id="phone" onclick="logout()"><ion-icon name="log-out"></ion-icon>LOGOUT</button> 
+    <button class="send" id="phone" onclick="createRoom()"><ion-icon name="duplicate"></ion-icon>CREATE ROOM</button>
+    <button class="send" id="phone" onclick="joinRoom()"><ion-icon name="copy"></ion-icon>JOIN ROOM</button>
 </div>
 
 
