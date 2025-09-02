@@ -222,7 +222,7 @@ ion-icon {
   }
 
   #phone {
-  display: block;
+  display: flex;
   }
 }
 
