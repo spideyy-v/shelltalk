@@ -51,7 +51,7 @@ input, textarea, button {
 button {
   cursor: pointer;
   font-weight: bold;
-  min-height: 44px; /* Apple's recommended minimum touch target size */
+  
 }
 
 .toggle {
