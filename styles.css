@@ -1,0 +1,238 @@
+/* Combined responsive styles for ShellTalk - Desktop and Mobile */
+:root {
+  --primary-bg: #000;
+  --secondary-bg: #111;
+  --accent-color: #00ff00;
+  --text-color: #00ff00;
+  --border-color: #00ff00;
+  --font-stack: 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container, .chat-container {
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  background: var(--secondary-bg);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 20px auto;
+}
+
+input, textarea, button {
+  background-color: var(--primary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 12px;
+  font-family: var(--font-stack);
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  min-height: 44px; /* Apple's recommended minimum touch target size */
+}
+
+.toggle {
+  font-size: 1.5rem;
+  border-style: none;
+  padding: 1px;
+  width: auto;
+  display: inline-block;
+}
+
+.chat-display {
+  height: 60vh;
+  overflow-y: auto;
+  background: var(--primary-bg);
+  padding: 10px;
+  border: 1px solid #0f0;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.chat-line {
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.hidden {
+  display: none;
+}
+
+ion-icon {
+  margin-bottom: -2px;
+}
+
+.send {
+  margin-top: 10px;
+}
+
+/* Notification popup */
+#notifyPopup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--text-color);
+  font-family: var(--font-stack);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  flex-direction: column;
+  text-align: center;
+}
+
+#notifyPopup div {
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--secondary-bg);
+}
+
+#phone {
+  display: none;
+}
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .login-container, .chat-container {
+    padding: 15px;
+    width: 100%;
+    max-width: 100%;
+    gap: 0.8rem;
+  }
+  
+  input, textarea, button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .chat-display {
+    height: 50vh;
+  }
+  
+  #loginSection h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  #loginSection img {
+    width: 80px;
+  }
+  
+  #roomCodeDisplay, #roomPasswordDisplay {
+    word-break: break-all;
+  }
+  
+  /* Notification popup adjustments for mobile */
+  #notifyPopup div {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+  
+  /* Button container for chat actions */
+  .chat-container > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+  }
+  
+  .chat-container > div:first-child button {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    padding: 8px 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  
+  /* Prevent textarea from being too small */
+  #messageInput {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+/* Mobile landscape orientation support */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .chat-display {
+    height: 40vh;
+  }
+  
+  .login-container, .chat-container {
+    padding: 10px;
+  }
+}
+
+/* Desktop-specific enhancements */
+@media screen and (min-width: 769px) {
+  .chat-container > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .chat-container > div:first-child button {
+    width: auto;
+    flex: none;
+  }
+  
+  .send {
+    width: auto;
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+
+  .desktop {
+  display: none;
+  }
+
+  #phone {
+  display: block;
+  }
+}
+
+/* Larger screens */
+@media screen and (min-width: 1200px) {
+  .login-container, .chat-container {
+    max-width: 1100px;
+  }
+  
+  .chat-display {
+    height: 65vh;
+  }
+}
