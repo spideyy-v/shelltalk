@@ -116,8 +116,11 @@ ion-icon {
 }
 
 #phone {
-  display: none;
+  display: block;
 }
+  .desktop {
+  display: none;
+  }
 
 /* Mobile-specific styles */
 @media screen and (max-width: 768px) {
@@ -196,6 +199,13 @@ ion-icon {
   .login-container, .chat-container {
     padding: 10px;
   }
+    .desktop {
+  display: block;
+  }
+
+  #phone {
+  display: none;
+  }
 }
 
 /* Desktop-specific enhancements */
@@ -218,11 +228,11 @@ ion-icon {
   }
 
   .desktop {
-  display: none;
+  display: block;
   }
 
   #phone {
-  display: flex;
+  display: none;
   }
 }
 
@@ -234,5 +244,12 @@ ion-icon {
   
   .chat-display {
     height: 65vh;
+  }
+    .desktop {
+  display: block;
+  }
+
+  #phone {
+  display: none;
   }
 }
